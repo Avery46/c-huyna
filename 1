@@ -1,0 +1,44 @@
+using System;
+
+
+
+namespace Prog
+{
+	public class Program
+	{
+		public static void Main(string[] args)
+		{
+		  
+		  
+		  
+		  string chars = "0123456789!@#$%^&*()qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
+		  string password = "";
+		  
+			Console.WriteLine("Select length");
+			string input = Console.ReadLine();
+			int length = int.Parse(input);
+			password = A(chars, length);
+			Console.WriteLine("Your pass: "+password);
+		}
+		
+		
+		
+		static string A(string chars, int length)
+		{
+        char[] mass = chars.ToCharArray();
+        int count = mass.Length;
+        string password = "";
+        Random random = new Random();
+
+        for (int i = 0; i < length; i++)
+        {
+            int index = random.Next(0, count);
+            password+= mass[index];
+        }
+        
+        return password;
+		  
+		  
+		}
+	}
+}
