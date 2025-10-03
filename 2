@@ -1,0 +1,33 @@
+using System;
+
+namespace Prog
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            int number = 10;
+            Console.WriteLine($"Натуральные делители числа {number}:");
+            
+            List<int> divisors = GetDivisors(number);
+            foreach (int d in divisors)
+            {
+                Console.WriteLine(d);
+            }
+        }
+        
+       
+        public static List<int> GetDivisors(int number)
+        {
+            List<int> divisors = new List<int>();
+            for (int i = 1; i <= number; i++)
+            {
+                if (number % i == 0)
+                {
+                    divisors.Add(i);
+                }
+            }
+            return divisors;
+        }
+    }
+}
